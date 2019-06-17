@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Design Patterns</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Head First Design Patterns</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Nav specific labels -->
+    <string name="home_label">Home</string>
+
+    <!-- Pattern Labels -->
+    <string name="strategy_label">Strategy - Ducks</string>
+    <string name="observer_label">Observer - Weather Station</string>
+    <string name="command_label">Command - Remote</string>
+
+    <!-- Duck Labels -->
+    <string name="mallard_duck_label">Mallard Duck</string>
+    <string name="redhead_duck_label">Redhead Duck</string>
+    <string name="rubber_duck_label">Rubber Duck</string>
+    <string name="wooden_duck_label">Wooden Duck</string>
+    <!-- Duck Buttons -->
+    <string name="perform_fly">Perform Fly</string>
+    <string name="perform_quack">Perform Quack</string>
+    <string name="perform_swim">Perform Swim</string>
+</resources>
