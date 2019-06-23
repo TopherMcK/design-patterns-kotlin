@@ -37,7 +37,10 @@ dependencies {
 
     implementation "org.koin:koin-android:$koinVersion"
 
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+
     testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-core:$mockitoCoreVersion"
     androidTestImplementation "androidx.test:runner:$androidxVersion"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

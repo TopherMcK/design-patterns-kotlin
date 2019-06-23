@@ -2,21 +2,32 @@ package com.clm.designpatternskotlin.util
 
 import android.content.Context
 import android.media.MediaPlayer
+import androidx.annotation.RestrictTo
 
-class MediaPlayerUtil(val appContext: Context){
-    val mediaPlayer: MediaPlayer = MediaPlayer()
+class MediaPlayerUtil constructor(private val appContext: Context) {
+    private var mediaPlayer: MediaPlayer
 
-    fun playFile(soundFileId: Int){
-        loadFile(soundFileId)
-        mediaPlayer.setOnCompletionListener {
-            mediaPlayer.reset()
+    init {
+        mediaPlayer = MediaPlayer()
+    }
+
+    @RestrictTo(RestrictTo.Scope.TESTS)
+    constructor(appContext: Context, mediaPlayer: MediaPlayer) : this(appContext) {
+        this.mediaPlayer = mediaPlayer
+    }
+
+    fun playFile(soundFileId: Int) {
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
         }
+        mediaPlayer.reset()
+        loadFile(soundFileId)
         mediaPlayer.start()
     }
 
-    private fun loadFile(soundFileId: Int){
+    private fun loadFile(soundFileId: Int) {
         mediaPlayer.setDataSource(
-            appContext.getResources().openRawResourceFd(soundFileId)
+            appContext.resources.openRawResourceFd(soundFileId)
         )
         mediaPlayer.prepare()
     }

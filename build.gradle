@@ -31,5 +31,10 @@ ext {
     // Android versions
     androidxVersion = '1.0.2'
 
+    // Misc
     koinVersion = '2.0.0-GA2'
+    timberVersion = '4.7.1'
+
+    // Tests
+    mockitoCoreVersion = '2.28.2'
 }
