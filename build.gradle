@@ -37,4 +37,5 @@ ext {
 
     // Tests
     mockitoCoreVersion = '2.28.2'
+    robolectricVersion = '4.3'
 }
