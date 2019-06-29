@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.widget.ImageView
+import androidx.annotation.RestrictTo
 
 class FlyWithWings(imageView: ImageView) : FlyingBehavior {
     private val duckImageView: ImageView = imageView
@@ -11,6 +12,11 @@ class FlyWithWings(imageView: ImageView) : FlyingBehavior {
 
     init {
         setupAnimator()
+    }
+
+    @RestrictTo(RestrictTo.Scope.TESTS)
+    internal constructor(imageView: ImageView, animator: ObjectAnimator) : this(imageView){
+        this.animator = animator
     }
 
     override fun fly() {
@@ -26,9 +32,9 @@ class FlyWithWings(imageView: ImageView) : FlyingBehavior {
         }
     }
 
-    private fun setupAnimator(){
+    internal fun setupAnimator(){
             animator = ObjectAnimator.ofFloat(duckImageView, "translationY", -90f)
-            animator.setDuration(1000)
+            animator.duration = 1000
     }
 
     private fun isOkayToStartAnimation(): Boolean {

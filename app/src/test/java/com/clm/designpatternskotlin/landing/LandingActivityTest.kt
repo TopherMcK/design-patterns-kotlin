@@ -30,7 +30,7 @@ class LandingActivityTest {
         var expectedLabel = landingActivity.getString(R.string.strategy_label)
         var actualLabel = landingActivity.duckBtn.text.toString()
         assertEquals(expectedLabel, actualLabel)
-        
+
         landingActivity.duckBtn.performClick()
         assertActivityStarted(StrategyActivity::class.java)
     }

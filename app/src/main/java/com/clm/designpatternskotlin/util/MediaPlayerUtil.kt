@@ -12,7 +12,7 @@ class MediaPlayerUtil constructor(private val appContext: Context) {
     }
 
     @RestrictTo(RestrictTo.Scope.TESTS)
-    constructor(appContext: Context, mediaPlayer: MediaPlayer) : this(appContext) {
+    internal constructor(appContext: Context, mediaPlayer: MediaPlayer) : this(appContext) {
         this.mediaPlayer = mediaPlayer
     }
 
